@@ -1,0 +1,90 @@
+<% layout("/layouts/boilerplates") %>
+<body>
+    <form action="/listings" novalidate class="needs-validation" method="post" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-8 offset-2 ">
+    <div class="mb-3" >
+    <label for="title" class="form-label">Title</label>
+     <input type="text" required class="form-control" name="listing[title]" placeholder="enter titile"/>
+     <div class="valid-feedback">
+        Titlte looks Good
+    </div>
+    <div class="invalid-feedback">
+    ❌ Please provide a description (at least 20 characters).
+  </div>
+</div>
+
+<div class="mb-3">
+  <label for="description" class="form-label">Description</label>
+  <textarea required
+    class="form-control" 
+    name="listing[description]" 
+    placeholder="Enter a detailed description here..."></textarea>
+    <div class="valid-feedback">
+    ✅ Description looks good!
+  </div>
+  
+  <!-- Error message -->
+  <div class="invalid-feedback">
+    ❌ Please provide a description (at least 20 characters).
+  </div>
+
+</div>
+
+<div>
+
+
+<div class="mb-3" >
+    <label for="image" class="form-label"> uplod Image</label>
+     <input  required type="file" class="form-control" name="listing[image]"  />
+     <div class="invalid-feedback">❌ Please uplode a valid image Url</div>
+      <div class="valid-feedback">
+    ✅ Image looks good!
+  </div>
+</div>
+
+<div class="row">
+        <div class="mb-3 col-md-4">
+    <label for="price" class="form-label">Price</label>
+    <input required class="form-control" type="text" name="listing[price]" placeholder="price" />
+    <div class="invalid-feedback">❌ Price should be valid</div>
+     <div class="valid-feedback">
+    ✅Price looks good!
+  </div>
+</div>
+<div class="mb-3 col-md-8">
+    <label for="location" class="form-label">Location</label>
+    <input required class="form-control" type="text" name="listing[location]" placeholder="location"/>
+    <div class="invalid-feedback">❌ Location should be valid</div>
+     <div class="valid-feedback">
+    ✅ location looks heaven!
+  </div>
+</div>
+
+   
+</div>
+
+<div class="mb-3">
+    <label for="country" class="form-label">country</label>
+    <input required class="form-control" type="text" name="listing[country]" placeholder="country" />
+    <div class="invalid-feedback">❌ Country should be valid </div>
+     <div class="valid-feedback">
+    ✅ Country looks intresting!
+  </div>
+</div>
+<div class="mb-3">
+    <label for="category" class="form-label">category</label>
+    <input required class="form-control" type="text" name="listing[category]" placeholder="category" />
+    <div class="invalid-feedback">❌ category should be valid </div>
+     <div class="valid-feedback">
+    ✅ category looks intresting!
+  </div>
+</div>
+<br>
+    <button class="btn btn-dark add-btn">create a new </button>
+    <br>
+    <br>
+ </div> 
+</div>
+  </form>
+</body>

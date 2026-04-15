@@ -1,0 +1,88 @@
+<% layout("/layouts/boilerplates") %>
+<body>
+        <br>
+        <h3>Edit this List</h3>
+        <br>
+        <form novalidate class="needs-validation" method="post" action="/listings/<%= List.id %>?_method=PUT" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" required class="form-control" name="listing[title]"
+                            value=" <%= List.title %> ">
+                        <div class="valid-feedback">
+                            Titlte looks Good
+                        </div>
+                        <div class="invalid-feedback">
+                            ❌ Please provide a Title .
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="description"> Description </label>
+                        <textarea required minlength="20" class="form-control" name="listing[description]"><%= List.description %></textarea>
+
+                        <div class="valid-feedback">
+                            ✅ Description looks good!
+                        </div>
+
+                        <!-- Error message -->
+                        <div class="invalid-feedback">
+                            ❌ Please provide a description (at least 20 characters).
+                        </div>
+                          <div>
+    <img id="edit-img" src="<%= List.image.url %>" alt="">
+  </div>
+                        <div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Image</label>
+                                <input type="file" class="form-control"
+                                    name="listing[image]" />
+                                <div class="invalid-feedback">❌ Please Enter a valid image Url</div>
+                                <div class="valid-feedback">
+                                    ✅ Image looks good!
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price">Price</label>
+                            <input required class="form-control" value="<%= List.price %>" name="listing[price]">
+                            <div class="invalid-feedback">❌ Price should be valid</div>
+                            <div class="valid-feedback">
+                                ✅Price looks good!
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="location">Location</label>
+                            <input required class="form-control" value="<%= List.location %>" name="listing[location]">
+                            <div class="invalid-feedback">❌ Location should be valid</div>
+                            <div class="valid-feedback">
+                                ✅ location looks heaven!
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="country">Country</label>
+                            <input required class="form-control" value="<%= List.country %>" name="listing[country]">
+                            <div class="invalid-feedback">❌ Country should be valid </div>
+                            <div class="valid-feedback">
+                                ✅ Country looks intresting!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category">category</label>
+                            <input required class="form-control" value="<%= List.category %>" name="listing[category]">
+                            <div class="invalid-feedback">❌ category should be valid </div>
+                            <div class="valid-feedback">
+                                ✅ category looks intresting!
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-dark edit-btn ">Edit this </button>
+                    </div>
+                </div>
+        </form>
+        <script src="/js/script.js"></script>
+  </body> 

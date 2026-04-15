@@ -2,7 +2,6 @@ const express = require('express');
 const Router = express.Router();
 const wrapAsyc = require('../utils/wrapAsyc');
 const { listingsSchema } = require('../sechma.js');
-const ExpressError = require('../utils/ExpressError.js');
 const Listing = require('../models/listing.js');
 const { isLogin, isOwner, validateListing } = require('../middleware.js');
 const path = require('path');

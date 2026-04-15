@@ -2,7 +2,7 @@ const Listing = require("./models/listing");
 const Reviews = require("./models/Reviews");
 const { findById } = require("./models/Reviews");
 const {listingsSchema,reviewSchema}= require('./sechma.js');
-const ExpressError = require('./utils/expressError.js');
+const ExpressError = require('./utils/ExpressError.js');
 
 
 

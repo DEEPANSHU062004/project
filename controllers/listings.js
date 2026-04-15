@@ -4,11 +4,8 @@ const Listing = require("../models/listing");
 module.exports.index=async(req,res)=>{
    const allList= await Listing.find({});
 
-   console.log("🔥 ROUTE HIT");
 
   let { category } = req.query;
-  console.log("👉 category:", category);
-
   let listings;
 
   if (category) {
@@ -16,7 +13,6 @@ module.exports.index=async(req,res)=>{
       category: { $regex: category, $options: "i" }
     });
   } else {
-    // 👇 IMPORTANT FIX
     listings = await Listing.find({}); // ya empty bhi kar sakta hai
   }
 
